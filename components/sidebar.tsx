@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Footer from "./footer";
 
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
@@ -22,7 +23,6 @@ const Sidebar = ({ user }: SiderbarProps) => {
           />
           <h1 className="sidebar-logo">Horizon</h1>
         </Link>
-
         {sidebarLinks.map((item) => {
           const isActive =
             pathname === item.route || pathname.startsWith(`${item.route}/`);
@@ -53,11 +53,10 @@ const Sidebar = ({ user }: SiderbarProps) => {
             </Link>
           );
         })}
-
         user
       </nav>
 
-      footer
+      <Footer user={user} />
     </section>
   );
 };

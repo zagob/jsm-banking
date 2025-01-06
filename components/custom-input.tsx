@@ -1,19 +1,28 @@
-import { useFormReturnProps } from "./auth-form";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { authFormSchema } from "@/lib/authFormSchema";
 import { FormControl, FormField, FormLabel, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
-import { FieldPath, UseFormReturn } from "react-hook-form";
+import { Control, FieldPath } from "react-hook-form";
+import { z } from "zod";
+
+const formSchema = authFormSchema("sign-up");
 
 interface CustomInputProps {
-  form: UseFormReturn<useFormReturnProps>;
-  name: FieldPath<useFormReturnProps>;
+  control: Control<z.infer<typeof formSchema>>;
+  name: FieldPath<z.infer<typeof formSchema>>;
   label: string;
   placeholder: string;
 }
 
-const CustomInput = ({ form, name, label, placeholder }: CustomInputProps) => {
+const CustomInput = ({
+  control,
+  name,
+  label,
+  placeholder,
+}: CustomInputProps) => {
   return (
     <FormField
-      control={form.control}
+      control={control}
       name={name}
       render={({ field }) => (
         <div className="form-item">

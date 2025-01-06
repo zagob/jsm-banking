@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
@@ -8,14 +9,14 @@ declare type SearchParamProps = {
 // ========================================
 
 declare type SignUpParams = {
-  firstName: string;
-  lastName: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
+  firstname?: string;
+  lastname?: string;
+  address1?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
+  ssn?: string;
   email: string;
   password: string;
 };
@@ -31,8 +32,9 @@ declare type User = {
   userId: string;
   dwollaCustomerUrl: string;
   dwollaCustomerId: string;
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
+  name: string;
   address1: string;
   city: string;
   state: string;
@@ -210,6 +212,7 @@ declare interface TotlaBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
+  type?: "desktop" | "mobile";
 }
 
 declare interface RightSidebarProps {
