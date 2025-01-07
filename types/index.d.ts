@@ -32,8 +32,8 @@ declare type User = {
   userId: string;
   dwollaCustomerUrl: string;
   dwollaCustomerId: string;
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   name: string;
   address1: string;
   city: string;
@@ -126,8 +126,8 @@ declare type AddFundingSourceParams = {
 };
 
 declare type NewDwollaCustomerParams = {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   type: string;
   address1: string;

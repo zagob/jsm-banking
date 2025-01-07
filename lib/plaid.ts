@@ -6,7 +6,7 @@ const configuration = new Configuration({
   baseOptions: {
     headers: {
       "PLAID-CLIENT-ID": env.PLAID_CLIENT_ID,
-      "PLAID-SECRET": env.PLAID_PRODUCTS,
+      "PLAID-SECRET": env.PLAID_SECRET,
     },
   },
 });
